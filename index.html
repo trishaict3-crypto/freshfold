@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>FreshFold Laundry | Professional Laundry & Dry Cleaning</title>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts: Poppins for a friendly modern look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #0B6E99;
+      --primary-dark: #085A7E;
+      --primary-light: #E6F4F9;
+      --accent: #00B4D8;
+      --accent-hover: #0096B4;
+      --white: #FFFFFF;
+      --off-white: #F8FCFE;
+      --text-dark: #1E2A3A;
+      --text-muted: #5C6F87;
+      --gray-light: #E9EEF3;
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.1);
+      --radius: 16px;
+      --radius-lg: 24px;
+    }
+
+    body {
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--white);
+      color: var(--text-dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--text-dark);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ========== BUTTONS ========== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 32px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--white);
+      box-shadow: 0 4px 14px rgba(11, 110, 153, 0.3);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(11, 110, 153, 0.4);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-white {
+      background-color: var(--white);
+      color: var(--primary);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-white:hover {
+      background-color: var(--off-white);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-whatsapp {
+      background-color: #25D366;
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #1ebe5a;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    .btn-sm {
+      padding: 10px 24px;
+      font-size: 0.85rem;
+    }
+
+    /* ========== HEADER ========== */
+    .header {
+      background-color: var(--white);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--gray-light);
+    }
+
+    .header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
+
+    .logo-icon {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: var(--white);
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary);
+      cursor: pointer;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      background: linear-gradient(135deg, var(--primary-light) 0%, #D0EAF5 100%);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 20px;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      max-width: 480px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .hero-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .hero-features span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-features i {
+      color: var(--primary);
+      font-size: 1.1rem;
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-image-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .hero-image-card i {
+      font-size: 5rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .hero-image-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+
+    .hero-image-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-image-card .badge {
+      display: inline-block;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 6px 16px;
+      border-radius: 50px;
+    }
+
+    /* ========== SECTION HEADER ========== */
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .section-header h2 {
+      font-size: 2.2rem;
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1rem;
+    }
+
+    /* ========== SERVICES ========== */
+    .services-section {
+      padding: 80px 0;
+      background-color: var(--off-white);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 28px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.02);
+      text-align: center;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .service-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--primary-light);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin: 0 auto 20px;
+    }
+
+    .service-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+      color: var(--primary-dark);
+    }
+
+    .service-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+
+    .service-card .price-tag {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 1rem;
+    }
+
+    /* ========== HOW IT WORKS ========== */
+    .process-section {
+      padding: 80px 0;
+      background: var(--white);
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .step {
+      text-align: center;
+      position: relative;
+      padding: 0 12px;
+    }
+
+    .step-icon {
+      width: 70px;
+      height: 70px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin: 0 auto 16px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .step-number {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background: var(--accent);
+      color: var(--white);
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+    }
+
+    .step h4 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+      color: var(--primary-dark);
+    }
+
+    .step p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* ========== PRICING ========== */
+    .pricing-section {
+      padding: 80px 0;
+      background: var(--off-white);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+
+    .pricing-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.02);
+      position: relative;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .pricing-card.featured {
+      border: 2px solid var(--primary);
+      box-shadow: var(--shadow-md);
+    }
+
+    .pricing-card.featured::before {
+      content: 'Most Popular';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary);
+      color: var(--white);
+      padding: 4px 20px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .pricing-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: var(--primary-dark);
+    }
+
+    .pricing-price {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 16px 0;
+    }
+
+    .pricing-price span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+
+    .pricing-features {
+      list-style: none;
+      margin: 24px 0;
+      text-align: left;
+    }
+
+    .pricing-features li {
+      padding: 8px 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pricing-features i {
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    .pricing-card .btn {
+      width: 100%;
+    }
+
+    /* ========== CTA BANNER ========== */
+    .cta-banner {
+      padding: 60px 0;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: var(--white);
+    }
+
+    .cta-banner .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .cta-banner h2 {
+      font-size: 2rem;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .cta-banner p {
+      opacity: 0.9;
+      font-size: 1rem;
+      max-width: 500px;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background-color: var(--text-dark);
+      color: rgba(255, 255, 255, 0.8);
+      padding: 64px 0 24px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand .logo {
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .footer-brand .logo-icon {
+      background: var(--accent);
+      color: var(--text-dark);
+    }
+
+    .footer-brand p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      transition: all 0.2s;
+    }
+
+    .footer-social a:hover {
+      background: var(--accent);
+      color: var(--text-dark);
+      transform: translateY(-2px);
+    }
+
+    .footer-col h4 {
+      color: var(--white);
+      font-size: 1rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--accent);
+    }
+
+    .footer-col ul li i {
+      margin-right: 10px;
+      color: var(--accent);
+      width: 16px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.85rem;
+    }
+
+    .footer-bottom a:hover {
+      color: var(--accent);
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 992px) {
+      .hero .container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+      }
+
+      .hero-content h1 {
+        font-size: 2.6rem;
+      }
+
+      .hero-content p {
+        margin: 0 auto 32px;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-features {
+        justify-content: center;
+      }
+
+      .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-actions .btn-outline {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .hero {
+        padding: 60px 0;
+      }
+
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+
+      .cta-banner .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .cta-banner p {
+        margin: 0 auto 20px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .header .container {
+        flex-wrap: wrap;
+      }
+    }
+
+    /* Mobile menu panel */
+    .mobile-menu-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: var(--white);
+      box-shadow: var(--shadow-md);
+      padding: 20px 24px;
+      flex-direction: column;
+      gap: 16px;
+      z-index: 99;
+      border-top: 1px solid var(--gray-light);
+    }
+
+    .mobile-menu-panel.active {
+      display: flex;
+    }
+
+    .mobile-menu-panel a {
+      font-weight: 500;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--gray-light);
+    }
+
+    .mobile-menu-panel .btn {
+      width: 100%;
+      justify-content: center;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <a href="#" class="logo">
+        <div class="logo-icon"><i class="fas fa-tshirt"></i></div>
+        <div>FreshFold</div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#" class="btn btn-outline btn-sm"><i class="fas fa-user"></i> Login</a>
+        <a href="#" class="btn btn-primary btn-sm"><i class="fas fa-calendar-check"></i> Book Pickup</a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu panel -->
+    <div class="mobile-menu-panel" id="mobileMenuPanel">
+      <a href="#">Home</a>
+      <a href="#services">Services</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#">Contact</a>
+      <a href="#" class="btn btn-outline btn-sm"><i class="fas fa-user"></i> Login</a>
+      <a href="#" class="btn btn-primary btn-sm"><i class="fas fa-calendar-check"></i> Book Pickup</a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Fresh Clothes, Zero Effort.</h1>
+        <p>Professional laundry, dry cleaning, and ironing services delivered right to your doorstep. We pick up, clean, and deliver — so you can focus on what matters.</p>
+        <div class="hero-buttons">
+          <a href="#" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Schedule a Pickup</a>
+          <a href="https://wa.me/254700000000" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Chat with Us</a>
+        </div>
+        <div class="hero-features">
+          <span><i class="fas fa-truck"></i> Free Pickup & Delivery</span>
+          <span><i class="fas fa-clock"></i> 24-Hour Turnaround</span>
+          <span><i class="fas fa-leaf"></i> Eco-Friendly Products</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-image-card">
+          <i class="fas fa-soap"></i>
+          <h3>Your Laundry, Our Priority</h3>
+          <p>Trusted by 500+ happy customers in the city.</p>
+          <span class="badge"><i class="fas fa-star"></i> 4.9 / 5 Rating</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Services</h2>
+        <p>From everyday laundry to delicate dry cleaning, we've got you covered.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- 1 -->
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-tshirt"></i></div>
+          <h3>Wash & Fold</h3>
+          <p>Everyday laundry washed, dried, and neatly folded. Perfect for busy households.</p>
+          <span class="price-tag">From KSh 200 / kg</span>
+        </div>
+        <!-- 2 -->
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-wind"></i></div>
+          <h3>Dry Cleaning</h3>
+          <p>Professional dry cleaning for suits, dresses, coats, and delicate fabrics.</p>
+          <span class="price-tag">From KSh 500 / item</span>
+        </div>
+        <!-- 3 -->
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-iron"></i></div>
+          <h3>Ironing & Pressing</h3>
+          <p>Crisp, wrinkle-free clothes with professional pressing and steaming.</p>
+          <span class="price-tag">From KSh 80 / item</span>
+        </div>
+        <!-- 4 -->
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-bed"></i></div>
+          <h3>Bedding & Duvets</h3>
+          <p>Deep cleaning for duvets, blankets, pillows, and bed sheets.</p>
+          <span class="price-tag">From KSh 800 / set</span>
+        </div>
+        <!-- 5 -->
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-shoe-prints"></i></div>
+          <h3>Shoe Cleaning</h3>
+          <p>Professional sneaker and leather shoe cleaning and restoration.</p>
+          <span class="price-tag">From KSh 400 / pair</span>
+        </div>
+        <!-- 6 -->
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-building"></i></div>
+          <h3>Commercial Laundry</h3>
+          <p>Bulk laundry services for hotels, restaurants, hospitals, and offices.</p>
+          <span class="price-tag">Custom Quote</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="process-section" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <h2>How It Works</h2>
+        <p>Getting your laundry done has never been easier. Just 4 simple steps.</p>
+      </div>
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-icon">
+            <i class="fas fa-calendar-plus"></i>
+            <div class="step-number">1</div>
+          </div>
+          <h4>Schedule Pickup</h4>
+          <p>Book online or call us to arrange a convenient pickup time.</p>
+        </div>
+        <div class="step">
+          <div class="step-icon">
+            <i class="fas fa-truck"></i>
+            <div class="step-number">2</div>
+          </div>
+          <h4>We Collect</h4>
+          <p>Our team picks up your laundry right from your doorstep.</p>
+        </div>
+        <div class="step">
+          <div class="step-icon">
+            <i class="fas fa-soap"></i>
+            <div class="step-number">3</div>
+          </div>
+          <h4>We Clean</h4>
+          <p>Professional cleaning with premium, eco-friendly products.</p>
+        </div>
+        <div class="step">
+          <div class="step-icon">
+            <i class="fas fa-box-open"></i>
+            <div class="step-number">4</div>
+          </div>
+          <h4>Delivery</h4>
+          <p>Fresh, folded clothes delivered back to you within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING SECTION -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <h2>Simple, Transparent Pricing</h2>
+        <p>No hidden fees. Pay only for what you need.</p>
+      </div>
+      <div class="pricing-grid">
+        <!-- Basic -->
+        <div class="pricing-card">
+          <h3>Wash & Fold</h3>
+          <div class="pricing-price">KSh 200 <span>/ kg</span></div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check-circle"></i> Wash, dry & fold</li>
+            <li><i class="fas fa-check-circle"></i> 24-hour turnaround</li>
+            <li><i class="fas fa-check-circle"></i> Free pickup & delivery</li>
+            <li><i class="fas fa-check-circle"></i> Eco-friendly detergents</li>
+          </ul>
+          <a href="#" class="btn btn-outline">Book Now</a>
+        </div>
+
+        <!-- Standard -->
+        <div class="pricing-card featured">
+          <h3>Wash, Dry & Iron</h3>
+          <div class="pricing-price">KSh 350 <span>/ kg</span></div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check-circle"></i> Wash, dry & iron</li>
+            <li><i class="fas fa-check-circle"></i> 24-hour turnaround</li>
+            <li><i class="fas fa-check-circle"></i> Free pickup & delivery</li>
+            <li><i class="fas fa-check-circle"></i> Premium fabric care</li>
+            <li><i class="fas fa-check-circle"></i> Priority scheduling</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Book Now</a>
+        </div>
+
+        <!-- Premium -->
+        <div class="pricing-card">
+          <h3>Dry Cleaning</h3>
+          <div class="pricing-price">KSh 500 <span>/ item</span></div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check-circle"></i> Professional dry cleaning</li>
+            <li><i class="fas fa-check-circle"></i> Suits, dresses & coats</li>
+            <li><i class="fas fa-check-circle"></i> Stain removal</li>
+            <li><i class="fas fa-check-circle"></i> Free pickup & delivery</li>
+          </ul>
+          <a href="#" class="btn btn-outline">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="container">
+      <div>
+        <h2>Ready for fresh, clean clothes?</h2>
+        <p>Schedule your first pickup today and get 20% off your first order.</p>
+      </div>
+      <a href="#" class="btn btn-white"><i class="fas fa-calendar-check"></i> Book Your First Pickup</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <div class="logo-icon"><i class="fas fa-tshirt"></i></div>
+            <div>FreshFold</div>
+          </a>
+          <p>Professional laundry and dry cleaning services with free pickup and delivery. We make laundry day effortless so you can focus on what matters most.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">Wash & Fold</a></li>
+            <li><a href="#">Dry Cleaning</a></li>
+            <li><a href="#">Ironing & Pressing</a></li>
+            <li><a href="#">Bedding & Duvets</a></li>
+            <li><a href="#">Commercial Laundry</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> 123 Market Street, City</li>
+            <li><i class="fas fa-phone-alt"></i> +254 700 000 000</li>
+            <li><i class="fas fa-envelope"></i> hello@freshfold.com</li>
+            <li><i class="fas fa-clock"></i> Mon–Sat: 7am – 8pm</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 FreshFold Laundry. All rights reserved.</p>
+        <div>
+          <a href="#">Privacy Policy</a> &nbsp;|&nbsp; 
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenuPanel = document.getElementById('mobileMenuPanel');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenuPanel.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    mobileMenuPanel.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenuPanel.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
